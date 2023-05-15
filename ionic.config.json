@@ -1,0 +1,7 @@
+{
+  "name": "grangemobile",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
