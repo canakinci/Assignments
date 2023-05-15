@@ -1,0 +1,54 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Students</ion-title>
+  </ion-toolbar>
+</ion-header>
+<!-- Include fullscreen=false or last item on <ion-list> will be hidden!! -->
+<ion-content [fullscreen]="false">
+  <ion-accordion-group>
+    <ion-accordion *ngFor="let student of newStudents">
+      <ion-item slot="header" color="light">
+        <ion-label>{{student.firstName}} {{student.lastName}}</ion-label>
+      </ion-item>
+      <div class="ion-padding" slot="content">
+        Student ID: {{student.studentID}}
+      </div>
+      <div class="ion-padding" slot="content">
+        Module Codes: {{student.moduleNo1}}, {{student.moduleNo2}}
+      </div>
+      <div class="ion-padding" slot="content">
+        Course ID Number: {{student.courseID}}
+      </div>
+      <ion-row class="ion-padding" slot="content">
+        <ion-col size="3">
+          <ion-fab-button
+            (click)="updateStudent(student)"
+            color="medium"
+            style="display: block"
+          >
+            <ion-icon name="create-outline"></ion-icon>
+          </ion-fab-button>
+        </ion-col>
+        <ion-col size="3">
+          <ion-fab-button
+            (click)="deleteStudent(student.studentID)"
+            color="danger"
+            style="display: block"
+          >
+            <ion-icon name="trash-outline"></ion-icon>
+          </ion-fab-button>
+        </ion-col>
+      </ion-row>
+    </ion-accordion>
+  </ion-accordion-group>
+  <ion-fab
+    name="add-circle-sharp"
+    slot="fixed"
+    horizontal="end"
+    vertical="bottom"
+  >
+    <ion-fab-button (click)="addStudent()" style="font-size: xx-large"
+      >+</ion-fab-button
+    >
+  </ion-fab>
+</ion-content>

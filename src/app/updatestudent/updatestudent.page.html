@@ -1,0 +1,16 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>update student</ion-title>
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="" (click)="dismiss(false)"></ion-back-button>
+      </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-input type="text" [(ngModel)]="student.firstName" placeholder="First Name"></ion-input>
+  <ion-input type="text" [(ngModel)]="student.lastName" placeholder="Last Name"></ion-input>
+  <ion-input type="text" [(ngModel)]="student.moduleNo1" placeholder="Module 1"></ion-input>
+  <ion-input type="text" [(ngModel)]="student.moduleNo2" placeholder="Module 2"></ion-input>
+  <ion-input type="text" [(ngModel)]="student.courseID" placeholder="Course ID"></ion-input>
+  <ion-button (click)="updateStudent()" expand='block'>Update Student</ion-button>
+</ion-content>

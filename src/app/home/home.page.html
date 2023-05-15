@@ -1,0 +1,32 @@
+<ion-content [fullscreen]="true">
+
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Today's Weather</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>{{cityName}}</ion-card-subtitle>
+      <ion-card-title>{{ weatherTemp?.temp ? (weatherTemp.temp - 273.15).toFixed(0) : '' }}° Celcius</ion-card-title>
+      <ion-icon slot="start" name="location"></ion-icon>
+      <ion-card-subtitle>{{todayDate | date: "EEE dd MMM"}}</ion-card-subtitle>
+    </ion-card-header>
+  </ion-card>
+
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>News</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-card *ngFor="let article of articles">
+    <ion-card-header>
+      <ion-card-subtitle>{{article.publishedAt | date}}</ion-card-subtitle>
+      <a href={{article.url}} target="_blank"><ion-card-title>{{article.title}}</ion-card-title></a>
+    </ion-card-header>
+    <ion-card-content>{{article.description}}</ion-card-content>
+  </ion-card>
+
+</ion-content>

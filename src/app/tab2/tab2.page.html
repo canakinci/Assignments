@@ -1,0 +1,25 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Lecturers</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="false">
+  <ion-accordion-group>
+    <ion-accordion *ngFor='let lecturer of newLecturers'>
+      <ion-item slot="header" color="light">
+        <ion-label>{{lecturer.firstName}} {{lecturer.lastName}}</ion-label>
+      </ion-item>
+      <div class="ion-padding" slot="content">
+        Staff Number: {{lecturer.staffNumber}}
+      </div>
+      <div class="ion-padding" slot="content">
+        Module Codes: {{lecturer.moduleNo1}}, {{lecturer.moduleNo2}}
+      </div>
+      <div class="ion-padding" slot="content">
+        Lecturer E-mail: {{lecturer.email}}
+      </div>
+    </ion-accordion>
+  </ion-accordion-group>
+</ion-content>
+

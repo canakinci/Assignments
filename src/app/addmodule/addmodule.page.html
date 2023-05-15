@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>addmodule</ion-title>
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="" (click)="dismiss(false)"></ion-back-button>
+      </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-input type="text" [(ngModel)]="newModule.moduleNo" placeholder="Module Number"></ion-input>
+  <ion-input type="text" [(ngModel)]="newModule.moduleName" placeholder="Module Name"></ion-input>
+  <ion-input type="text" [(ngModel)]="newModule.credits" placeholder="Credits"></ion-input>
+  <ion-input type="text" [(ngModel)]="newModule.website" placeholder="Website"></ion-input>
+  <ion-input type="text" [(ngModel)]="newModule.dueDate" placeholder="Due Date"></ion-input>
+  <ion-input type="text" [(ngModel)]="newModule.location" placeholder="Location"></ion-input>
+  <ion-input type="text" [(ngModel)]="newModule.room" placeholder="Room"></ion-input>
+  <ion-input type="text" [(ngModel)]="newModule.lat" placeholder="Latitude"></ion-input>
+  <ion-input type="text" [(ngModel)]="newModule.long" placeholder="Longitude"></ion-input>
+  <ion-button (click)="addModule()" expand='block'>Add Module</ion-button>
+</ion-content>
